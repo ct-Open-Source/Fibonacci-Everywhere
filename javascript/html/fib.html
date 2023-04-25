@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script>
+        (function (window) {
+            function fib(n) {
+                let result = [];
+                let prev = 0n;
+                let sum = 1n;
+                for (let i = 0; i < n; ++i)
+                {
+                    result.push(sum);
+                    [prev, sum] = [sum, prev + sum];
+                }
+                return result;
+            }
+            function main() {
+                const N = 100;
+                const result = fib(N);
+                document.querySelector('div#result').textContent = result.join(', ');
+                document.querySelector('h1').textContent = `First ${N} Fibonacci Numbers`;
+            }
+            window.addEventListener('load', main);
+        })(window);
+    </script>
+</head>
+
+<body>
+    <h1></h1>
+    <div id="result"></div>
+</body>
+
+</html>
