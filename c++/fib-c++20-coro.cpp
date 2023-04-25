@@ -130,10 +130,8 @@ int main(int argc, char *argv[])
     {
         n = static_cast<unsigned int>(std::atoi(argv[1]));
     }
-    
+
     auto seq = fibonacci<uint64_t>(n);
-
-
     while (seq.has_next())
     {
         std::cout << seq.value() << ' ';
