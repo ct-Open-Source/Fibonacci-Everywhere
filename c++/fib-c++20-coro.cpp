@@ -1,8 +1,12 @@
-#include <iostream>
+#include <concepts>
 #include <coroutine>
+#include <cstdint>
+#include <exception>
+#include <iostream>
+#include <type_traits>
 
 // compile with:
-// g++ -std=c++20 -O2 -o fib fib-c++20-coro.cpp
+// g++ -std=c++20 -O2 -o fib-20 fib-c++20-coro.cpp
 
 template <typename T>
 struct generator
@@ -68,7 +72,10 @@ private:
     }
 };
 
-template <typename INT>
+template<typename T>
+concept Integral = std::integral<T>;
+
+template <Integral INT>
 generator<INT> fibonacci(unsigned int n)
 {
     INT a = 0;
