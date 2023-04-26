@@ -1,6 +1,9 @@
-( Print 1st n elements of Fibonacci sequence )
-( run with                                   )
-(   gforth < fib.f                           )
+( Print 1st n numbers of Fibonacci sequence )
+(                                           )
+( Author: Oliver Lau <ola@ct.de>            )
+(                                           )
+( run with                                  )
+(   gforth < fib.f                          )
 
 : fib ( n -- )
 cr
