@@ -22,12 +22,12 @@ newpath
 
 /Helvetica findfont 10 scalefont setfont
 
-1 1 0
+1 1 0 % start values for Fibonacci calculation
 100 {
     newpath
     x 3 add y moveto
     dup 20 string cvs show
-    add dup 3 1 roll % fibonacci calculation
+    add dup 3 1 roll   % Fibonacci calculation
     /y y lineHeight sub def
     y 40 lt {
         /x x xstep add def
