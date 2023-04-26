@@ -9,18 +9,21 @@
 %%BoundingBox: 0 0 595 842
 %%Pages: 1
 
-/y0 720 def
-/xstep 120 def
-/x 20 def
-/y y0 def
-/lineHeight 11 def
+/mm {2.835 mul} def
+/x0 10 mm def
+/y0 253 mm def
 
 /Times-Roman findfont 22 scalefont setfont
 newpath
-20 y0 22 add moveto
+x0 y0 10 mm add moveto
 (1st 100 Fibonacci Numbers) show
 
 /Helvetica findfont 10 scalefont setfont
+
+/x 10 mm def
+/y y0 def
+/xstep 50 mm def
+/ystep 12 def
 
 1 1 0 % start values for Fibonacci calculation
 100 {
@@ -28,8 +31,8 @@ newpath
     x 3 add y moveto
     dup 20 string cvs show
     add dup 3 1 roll   % Fibonacci calculation
-    /y y lineHeight sub def
-    y 40 lt {
+    /y y ystep sub def
+    y 20 mm lt {
         /x x xstep add def
         /y y0 def
     } if
