@@ -1,0 +1,41 @@
+%!PS
+%%LanguageLevel: 2
+%%Creator: Oliver Lau
+%%Title: 1st 100 Fibonacci Numbers generated in PostScript only
+%%DocumentMedia: A4
+%%Orientation: portrait
+%%DocumentData: Clean7Bit
+%%Origin: 0 0
+%%BoundingBox: 0 0 595 842
+%%Pages: (atend)
+
+/y0 720 def
+/xstep 120 def
+/x 20 def
+/y y0 def
+/lineHeight 11 def
+
+/Times-Roman findfont 22 scalefont setfont
+newpath
+20 y0 22 add moveto
+(1st 100 Fibonacci Numbers) show
+
+/Helvetica findfont 10 scalefont setfont
+
+1 1 0
+100 {
+    newpath
+    x 3 add y moveto
+    dup 20 string cvs show
+    add dup 3 1 roll % fibonacci calculation
+    /y y lineHeight sub def
+    y 40 lt {
+        /x x xstep add def
+        /y y0 def
+    } if
+} repeat
+pop pop pop
+
+showpage
+
+%%EOF
