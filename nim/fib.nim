@@ -6,16 +6,15 @@
 #
 # Author: Oliver Lau <ola@ct.de>
 
-
 import bigints
 
 proc fib(n: int) =
-  var a = 0.initBigInt
-  var b = 1.initBigInt
-  for i in 0..n:
+  var 
+    a = 0.initBigInt
+    b = 1.initBigInt
+  for i in 0..<n:
     stdout.write a, " "
-    let c = a + b
-    a = b
-    b = c
+    swap a, b
+    b += a
 
 fib(100)
