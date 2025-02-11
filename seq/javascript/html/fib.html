@@ -4,21 +4,18 @@
 <head>
     <script>
         (function (window) {
-            function fib(n) {
-                let result = [];
+            const fib = function* (n) {
                 let prev = 0n;
                 let sum = 1n;
-                for (let i = 0; i < n; ++i)
-                {
-                    result.push(sum);
+                for (let i = 0; i < n; ++i) {
+                    yield sum;
                     [prev, sum] = [sum, prev + sum];
                 }
-                return result;
+                yield sum;
             }
             function main() {
                 const N = 100;
-                const result = fib(N);
-                document.querySelector('div#result').textContent = result.join(', ');
+                document.querySelector('div#result').textContent = [...fib(N)].join(', ');
                 document.querySelector('h1').textContent = `First ${N} Fibonacci Numbers`;
             }
             window.addEventListener('load', main);
