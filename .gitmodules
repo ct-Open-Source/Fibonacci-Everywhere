@@ -1,3 +1,3 @@
 [submodule "c++/BigInt"]
-	path = c++/BigInt
+	path = seq/c++/BigInt
 	url = https://github.com/faheel/BigInt.git
